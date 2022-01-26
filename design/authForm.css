@@ -9,4 +9,88 @@ html {
           box-sizing: border-box;
   text-decoration: none;
 }
+
+body {
+  background-color: #fff;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .account-actions {
+  width: 100%;
+  padding: 0 15px;
+}
+
+main .account-actions .account-actions-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 25px 25px;
+  border: 1px solid #ececec;
+}
+
+main .account-actions .account-actions-container .account-actions-body {
+  text-align: center;
+}
+
+main .account-actions .account-actions-container .account-actions-body .action-title {
+  padding: 0 0 20px 0;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+main .account-actions .account-actions-container .account-actions-body .form-row {
+  display: -ms-grid;
+  display: grid;
+}
+
+main .account-actions .account-actions-container .account-actions-body .form-row .input-container {
+  width: 100%;
+}
+
+main .account-actions .account-actions-container .account-actions-body .form-row .input-container label {
+  display: block;
+  text-align: left;
+}
+
+main .account-actions .account-actions-container .account-actions-body .form-row .input-container input[type=text],
+main .account-actions .account-actions-container .account-actions-body .form-row .input-container input[type=password] {
+  width: 100%;
+  margin: 10px 0 20px 0;
+  padding: 10px 0 10px 8px;
+  border: 1px solid #ececec;
+  border-radius: 3px;
+  outline: none;
+}
+
+main .account-actions .account-actions-container .account-actions-body .submitBtn {
+  display: block;
+  width: 100%;
+  padding: 5px 0;
+  margin-bottom: 15px;
+}
+
+main .account-actions .account-actions-container .account-actions-body .action-link {
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  main .account-actions .account-actions-container .account-actions-body #double-input {
+    display: -ms-grid;
+    display: grid;
+    gap: 10px;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
 /*# sourceMappingURL=authForm.css.map */

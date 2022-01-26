@@ -8,3 +8,81 @@ html {
     box-sizing: border-box;
     text-decoration: none;
 }
+
+body {
+    background-color: #fff;
+}
+
+main {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    .account-actions {
+        width: 100%;
+        padding: 0 15px;
+
+        .account-actions-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 25px 25px;
+            border: 1px solid #ececec;
+
+            .account-actions-body {
+                text-align: center;
+                .action-title {
+                    padding: 0 0 20px 0;
+                    text-transform: uppercase;
+                    text-align: left;
+                }
+                .form-row {
+                    display: grid;
+                    .input-container {
+                        width: 100%;
+
+                        label {
+                            display: block;
+                            text-align: left;
+                        }
+
+                        input[type=text],
+                        input[type=password] {
+                            width: 100%;
+                            margin: 10px 0 20px 0;
+                            padding: 10px 0 10px 8px;
+                            border: 1px solid #ececec;
+                            border-radius: 3px;
+                            outline: none;
+                        }
+                    }
+                }
+                .submitBtn {
+                    display: block;
+                    width: 100%;
+                    padding: 5px 0;
+                    margin-bottom: 15px;
+                }
+                .action-link {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    main {
+        .account-actions {
+            .account-actions-container {
+                .account-actions-body {
+                    #double-input {
+                        display: grid;
+                        gap: 10px;
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+            }
+        }
+    }    
+}

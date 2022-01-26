@@ -1,4 +1,16 @@
 <?php 
+    function registerAccount() {
+
+    }
+
+    function authenticateAccount() {
+
+    }
+
+    function disconnectAccount() {
+
+    }
+    
     // Checking whether a session is started or not.
     function is_session_started() {
         if (php_sapi_name() !== 'cli') {
