@@ -17,6 +17,7 @@
     <title><?php echo $_SESSION['fname'] ?>'s profile</title>
 </head>
 <body>
-    Welcome back, <?php echo $_SESSION['fname'] ?>.
+    Welcome back, <?php echo $_SESSION['fname'] ?>. <br>
+    <a href="../index.php?authenticationProcess=3">uitloggen</a>
 </body>
 </html>

@@ -19,7 +19,7 @@
                 $stmt->execute([
                     ':post_mail' => $mail
                 ]);
-                
+
                 $existingAccount = $stmt->rowCount(); // Assigning rowCount result to a readable variable.
 
 
@@ -91,7 +91,11 @@
     }
 
     function disconnectAccount() {
+        // Check whether a session already exists. If not, start one.
+        if (is_session_started() === FALSE) session_start();
 
+        session_destroy();
+        header('Location: template/account.php?disconnectSuccessfull');
     }
     
     // Checking whether a session is started or not.
