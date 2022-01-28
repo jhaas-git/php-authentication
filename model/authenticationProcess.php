@@ -19,8 +19,9 @@
                 $stmt->execute([
                     ':post_mail' => $mail
                 ]);
-                // Assigning rowCount result to a readable variable.
-                $existingAccount = $stmt->rowCount();
+                
+                $existingAccount = $stmt->rowCount(); // Assigning rowCount result to a readable variable.
+
 
                 if ($existingAccount > 0) { 
                     // If more than zero results are found,
@@ -48,7 +49,45 @@
     }
 
     function authenticateAccount() {
+        require 'model/pdo/config.php';
+        // Make sure the post values aren't empty. 
+        // When they aren't empty, Check whether a session exists, if not, start one. 
+        // Then assign post values to specific variables.
+        if (!empty($_POST['mail_address']) && ($_POST['password'])) {
+            if (is_session_started() === FALSE) session_start();
+            $mail = $_POST['mail_address'];
+            $pass = $_POST['password']; 
+            $hash = hash('sha256', $pass);
 
+            // Check if the account actually exists.
+            $fetchExistingAccount = 'SELECT idUser, sFirstname, sLastname, sPassword FROM account WHERE sMailaddress = :post_mail';
+            $stmt = $pdo->prepare($fetchExistingAccount);
+            $stmt->execute([
+                ':post_mail' => $mail
+            ]);
+
+            $existingAccount = $stmt->rowCount(); // Assigning rowCount result to a readable variable.
+
+            // When no existing account is found, redirect to the registration page.
+            if ($existingAccount == 0) {
+                header('location: template/account.php?register=noAccount'); // Redirect to register page, error message sent through the GET.
+            } elseif ($existingAccount > 0) {
+                // When the account does exist, check if the password is correct.
+                $account = $stmt->fetch(PDO::FETCH_ASSOC);
+                // If the submitted password equals the database value, start several sessions.
+                if ($hash == $account['sPassword']) {
+                    $_SESSION['signedin'] = TRUE;
+                    $_SESSION['id'] = $account['idUser'];
+                    $_SESSION['fname'] = $account['sFirstname'];
+                    // Roles could be added to the session aswell.
+                    header('Location: template/profile.php'); // Redirect to the users' profile.
+                } else {
+                    header('location: template/account.php?authentication=incorrectPassword'); // Redirect to login page, error message sent through the GET.
+                }
+            }
+        } else {
+            header('location: template/account.php?authentication=missingFields'); // Redirect to login page, error message sent through the GET.
+        }
     }
 
     function disconnectAccount() {
