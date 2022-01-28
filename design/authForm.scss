@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap');
+$text: 'DM Sans', sans-serif;
+$title: 'Inter', sans-serif;
+
 html {
     scroll-behavior: smooth;
 }
@@ -10,7 +14,7 @@ html {
 }
 
 body {
-    background-color: #fff;
+    background-color: #fafbfdd3
 }
 
 main {
@@ -27,14 +31,18 @@ main {
             max-width: 600px;
             margin: 0 auto;
             padding: 25px 25px;
-            border: 1px solid #ececec;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
+            border-radius: 5px;
+            background-color: #fff;
 
             .account-actions-body {
                 text-align: center;
                 .action-title {
                     padding: 0 0 20px 0;
-                    text-transform: uppercase;
                     text-align: left;
+                    font: 1.13rem $title;
+                    letter-spacing: 1px;
+                    color: #4067f9;
                 }
                 .form-row {
                     display: grid;
@@ -44,6 +52,9 @@ main {
                         label {
                             display: block;
                             text-align: left;
+                            font: 1rem $text;
+                            letter-spacing: 0.7px;
+                            color: #525252;
                         }
 
                         input[type=text],
@@ -51,20 +62,50 @@ main {
                             width: 100%;
                             margin: 10px 0 20px 0;
                             padding: 10px 0 10px 8px;
-                            border: 1px solid #ececec;
-                            border-radius: 3px;
+                            font: 1rem $text;
+                            color: #999999;
+                            letter-spacing: 1px;
+                            border: none;
+                            border-radius: 5px;
+                            background-color: #d0d7fc2d;
                             outline: none;
+                            transition: all 0.2s;
+                        }
+                        input[type=text]:hover, input[type=text]:focus,
+                        input[type=password]:hover, input[type=password]:focus {
+                            background-color: #e8ebfdb9;
+                            color: #5e5e5e;
                         }
                     }
                 }
                 .submitBtn {
                     display: block;
                     width: 100%;
-                    padding: 5px 0;
+                    padding: 8px 0;
                     margin-bottom: 15px;
+                    font: 0.96rem $text;
+                    border: 2px solid #ecefff93;
+                    border-radius: 5px;
+                    background-color: #ecefff1f;
+                    color: #a3a3a3;
+                    outline: none;
+                    transition: all 0.15s;
+                }
+                .submitBtn:hover {
+                    cursor: pointer;
+                    border: 2px solid #4067f9;
+                    background-color: #4067f9;
+                    color: #ffffff;
                 }
                 .action-link {
+                    font: 0.91rem $text;
                     text-align: center;
+                    text-decoration: none;
+                    color: #c5c4c4;
+                    transition: all 0.15s;
+                }
+                .action-link:hover {
+                    color: #525252;
                 }
             }
         }

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
 html {
   scroll-behavior: smooth;
 }
@@ -11,7 +12,7 @@ html {
 }
 
 body {
-  background-color: #fff;
+  background-color: #fafbfdd3;
 }
 
 main {
@@ -36,7 +37,10 @@ main .account-actions .account-actions-container {
   max-width: 600px;
   margin: 0 auto;
   padding: 25px 25px;
-  border: 1px solid #ececec;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
+  border-radius: 5px;
+  background-color: #fff;
 }
 
 main .account-actions .account-actions-container .account-actions-body {
@@ -45,8 +49,10 @@ main .account-actions .account-actions-container .account-actions-body {
 
 main .account-actions .account-actions-container .account-actions-body .action-title {
   padding: 0 0 20px 0;
-  text-transform: uppercase;
   text-align: left;
+  font: 1.13rem "Inter", sans-serif;
+  letter-spacing: 1px;
+  color: #4067f9;
 }
 
 main .account-actions .account-actions-container .account-actions-body .form-row {
@@ -61,6 +67,9 @@ main .account-actions .account-actions-container .account-actions-body .form-row
 main .account-actions .account-actions-container .account-actions-body .form-row .input-container label {
   display: block;
   text-align: left;
+  font: 1rem "DM Sans", sans-serif;
+  letter-spacing: 0.7px;
+  color: #525252;
 }
 
 main .account-actions .account-actions-container .account-actions-body .form-row .input-container input[type=text],
@@ -68,20 +77,56 @@ main .account-actions .account-actions-container .account-actions-body .form-row
   width: 100%;
   margin: 10px 0 20px 0;
   padding: 10px 0 10px 8px;
-  border: 1px solid #ececec;
-  border-radius: 3px;
+  font: 1rem "DM Sans", sans-serif;
+  color: #999999;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d0d7fc2d;
   outline: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+main .account-actions .account-actions-container .account-actions-body .form-row .input-container input[type=text]:hover, main .account-actions .account-actions-container .account-actions-body .form-row .input-container input[type=text]:focus,
+main .account-actions .account-actions-container .account-actions-body .form-row .input-container input[type=password]:hover, main .account-actions .account-actions-container .account-actions-body .form-row .input-container input[type=password]:focus {
+  background-color: #e8ebfdb9;
+  color: #5e5e5e;
 }
 
 main .account-actions .account-actions-container .account-actions-body .submitBtn {
   display: block;
   width: 100%;
-  padding: 5px 0;
+  padding: 8px 0;
   margin-bottom: 15px;
+  font: 0.96rem "DM Sans", sans-serif;
+  border: 2px solid #ecefff93;
+  border-radius: 5px;
+  background-color: #ecefff1f;
+  color: #a3a3a3;
+  outline: none;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+main .account-actions .account-actions-container .account-actions-body .submitBtn:hover {
+  cursor: pointer;
+  border: 2px solid #4067f9;
+  background-color: #4067f9;
+  color: #ffffff;
 }
 
 main .account-actions .account-actions-container .account-actions-body .action-link {
+  font: 0.91rem "DM Sans", sans-serif;
   text-align: center;
+  text-decoration: none;
+  color: #c5c4c4;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+main .account-actions .account-actions-container .account-actions-body .action-link:hover {
+  color: #525252;
 }
 
 @media (min-width: 500px) {
